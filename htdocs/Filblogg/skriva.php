@@ -5,20 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Min enkla blogg</title>
     <link rel="stylesheet" href="./css/flatly.epic.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1>Skriv inlägg</h1>
-    <nav>
-    <ul>
-    <li><a href="index.php">Hemsida</a></li>
-    <li><a href="skriva.php">Skriv inlägg</a></li>
-    <li><a href="lasa.php">Läs inlägg</a></li>
-    </ul>
-    </nav>
-    <form action="spara.php" method="post">
+<div class="kontainer">
+<header>
+<?php include "header.inc" ?>
+<main>
+<form action="spara.php" method="post">
     <label for="inlagg">Inlägg</label>
     <textarea name="inlagg" id="inlagg" cols="30" rows="10" class="form-control"></textarea>
     <button class="btn-primary">Spara inlägg</button>
     </form>
+</main>
+<footer>
+Lukas Kirby 2018
+</footer>
+</div>
+
+
+
 </body>
 </html>
