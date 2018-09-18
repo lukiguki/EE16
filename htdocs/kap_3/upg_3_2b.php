@@ -18,7 +18,7 @@
     if($namn == "lukas" && $losenord == "kirby"){
         echo "$namn, du är inloggad";
     } else{
-        header('Location: upg_3_2.php');
+        header('Location: upg_3_2.php?fel=1');
         die();
     }
     ?>

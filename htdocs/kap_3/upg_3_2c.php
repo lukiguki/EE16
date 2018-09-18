@@ -10,15 +10,24 @@
 
 <body>
 <?php
-if(isset($_GET['fel'])){
-    $fel = $_GET['fel'];
-    if ($fel == 1){
-        echo "<p> Fel användarnamn eller lösenord. Vg försök igen!</p>";
-    }
+
+if(isset($_POST["anvnamn"]) && isset($_POST["losenord"])){
+
+/* ta emot data */
+$namn = $_POST["anvnamn"];
+$losenord = $_POST["losenord"];
+
+/* kontrollera användarnamn och lösenord */
+
+if($namn == "lukas" && $losenord == "kirby"){
+    echo "$namn, du är inloggad";
+} else{
+    echo "<p> Fel användarnamn eller lösenord. Vg försök igen!</p>";
+}
 }
 
 ?>
-    <form action="upg_3_2b.php" method="post">
+    <form action="#" method="post">
         <label for="anvnamn">Användarnamn</label><input type="text" name="anvnamn"><br>
         <label for="losenord">Lösenord</label><input type="text" name="losenord">
         <button>Logga In</button>
