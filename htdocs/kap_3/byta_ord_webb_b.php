@@ -18,18 +18,13 @@ $nordet = $_POST["nordet"];
 
 /* Läs in webbsida */
 $gammlasida = file_get_contents($url);
-$nyasida = "";
+
 $antal =1;
 $start = 0;
 $slut = 1;
 
 /* Hitta första position av ordet i texten */
-while ($slut != false) {
-    $slut = stripos($gammlasida, $sordet, $start + 1);
-    $nyasida .= substr($gammlasida, $start, $slut ) . $nordet;
-    $antal++;
-    $start = $slut + strlen($sordet);;
-}
+$nyasida = str_replace($sordet, $nordet, $gammlasida);
 
 file_put_contents("test.html", $nyasida);
 

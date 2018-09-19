@@ -9,13 +9,13 @@
 </head>
 
 <body>
-    <form action="hitta_ord_webb_b.php" method="post">
+    <form action="byta_ord_webb_b.php" method="post">
         <label for="ruta">Url: </label>
         <input type="text" name="url"><br>
         <label for="ordet">Ordet:</label>
         <input type="text" name="ordet"><br>
         <label for="nordet">Nya ordet::</label>
-        <input type="text" name="ordet"><br>
+        <input type="text" name="nordet"><br>
         <button>Byt Ord</button>
     </form>
 </body>
