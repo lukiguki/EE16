@@ -1,0 +1,11 @@
+*Ge exempel på en webbtjänst som bygger på PHP.
+Ett forum. Den måste konstant uppdateras för att kunna få de senaste uppläggen. Tex facebook, ZARP gaming och reddit där användare skickar ut nya sidor varje dag.
+
+Såhär ser en webbtjänst som använder PHP ut en minut.
+https://gyazo.com/e020d58b1a6fc719279d7407dcb73a74
+Den andra minuten ser den ut såhär(när någon har lagt upp något):
+https://gyazo.com/7fa01f132ab144c295dba2d3dc072fa9
+*Beskriv skillnaden mellan statiska webbsidor och dynamiska webbsidor.
+För att en statisk hemsida ska ändras måste webbmastern göra om den. Men för en dynamisk hemsida att ändras krävs bara PHP kod för att kunna ändra hemsidan så att vanliga användare kan ändra den. I en dynamisk sida är HTML filen lagrad på en server medans i en statisk hemsida är html koden lagrad lokalt.
+*Beskriv vad som krävs för att en webbapplikation byggd på PHP skall fungera: hårdvara och mjukvara.
+Först så behöver webbapplikationen en server där html koden och PHP koden lagrat. Och sen behövs internet så att man kan få åtkomst till den dynamiska hemsidan.
