@@ -9,15 +9,20 @@
 <body>
 <?php
 /* Ange sökväg till katalogen */
-$sokvag = 'C:\Users\lukas.kirby\Pictures\Camera Roll';
+$sokvag = './Bilder';
 
 /* Skanna katalogen */
 $filer = scandir($sokvag);
 
+
 /* Skriv ut alla filer som hittades */
 foreach ($filer as $fil) {
     if($fil != "." && $fil != ".."){
-        echo "<p>$fil</p>";
+        echo "<div class=\"ros\">
+        \n<img class=\"ram hoger\" src=\"./Bilder/$fil\" alt=\"Flikros (Rosa obtusifolia)\">
+        \n<p class=\"textHoger\"><strong>Hallo</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vero tempore quasi modi optio, delectus voluptatum est veritatis quidem perspiciatis suscipit molestiae aliquid nesciunt hic reprehenderit animi nostrum vitae exercitationem.</p>
+        \n<hr>
+    \n</div>";
     }
 }
 ?>
