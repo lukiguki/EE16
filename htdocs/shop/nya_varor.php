@@ -1,7 +1,25 @@
+<?php/* 
+*
+ */
+?>
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Filuppladdning</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.0/dist/mini-default.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 <?php
 /* Kolla att man har klickat på knappen 'submit' */
 if (isset($_POST['submit'])) {
-    $filen =  $_FILES['filen'];
+    $filen =  $_FILES['file'];
+    $beskrivning =  $_POST['beskrivning'];
+    $pris =  $_POST['pris'];
+    /* Ladda upp bilden */
+
     /* print_r($filen); */
     /* Plocka ut filnamnet */
     $fileName = $filen['name'];
@@ -41,13 +59,12 @@ if (isset($_POST['submit'])) {
             /* Skapa nytt unikt filnamn för att inte skriva filer med samma namn */
             $fileNewName = uniqid('', true) . '.' . $fileExt[1];
             /* Hela sökvägen till den nya filen */
-            $fileDestination = "./bilder/$fileNewName";
+            $fileDestination = "./varor/$fileNewName";
             echo "<p>$fileDestination</p>";
             /* Flytta filen rätt */
             move_uploaded_file($fileTempName, $fileDestination);
             echo "<p>Uppladdning lyckades!</p>";
             /* Hoppa tillbaka till formuläret */
-            header("Location:filuppladdning.php?uploadsuccess");
         } else {
             echo "<p>Något gick fel: $errors[$fileError]</p>";
         }
@@ -55,6 +72,19 @@ if (isset($_POST['submit'])) {
     } else {
         echo "<p>Icke tillåten filtyp!</p>";
     }
+    /* Slut på bilduppladdning */
+    /* Spara texten: beskrivning, pris och bildens nya namn */
+    $handtag = fopen('beskrivnig.txt', 'a');
+    fwrite($handtag, $beskrivning . "¤" . $pris . "¤" . $fileNewName . PHP_EOL);
+    fclose($handtag);
     
 }
 ?>
+    <form action="#" method="POST" enctype="multipart/form-data">
+    <label>Beskrivning</label><input type="text" name="beskrivning"><br>
+    <label>Pris</label><input type="text" name="pris"><br>
+    <input type="file" name="file">
+    <button typr="submit" name="submit">Ladda upp vara</button>
+    </form>
+</body>
+</html>
