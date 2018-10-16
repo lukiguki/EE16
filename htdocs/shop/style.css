@@ -15,21 +15,27 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
 
 /* Sidans utseende */
 body {
-    background: url("./bilder/daggros.jpg");
+    background: url(https://cdn4.matsmart.se/sites/all/themes/retailshop/images/bg.jpg);
     background-size: 5000px;
     background-attachment: fixed;
 }
-div.kontainer {
+.kontainer {
     width: 800px;
     padding: 30px;
-    color: #FFF;
-    background: linear-gradient(to bottom, #627d4d 0%,#1f3b08 100%);
+    background: #DDD;
     margin: 20px auto;
     border-radius: 5px;
+    font-family: sans-serif;
+}
+header{
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
 }
 h1 {
     font-family: 'Courgette', cursive;
-    font-size: 80px;
+    font-size: 40px;
     text-align: center;
     text-shadow: 3px 3px 5px #000;
 }
@@ -37,10 +43,23 @@ label{
     width: 150px;
     display: inline;
 }
+#korgen{
+    width: 200px;
+    border: 1px solid #CCC;
+    text-align: right;
+    padding: 5px;
+    border-radius: 5px;
+    background: #FFF;
+}
+main {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+}
 div.vara {
     font-family: 'Slabo 27px', serif;
     font-size: 18px;
-    background: linear-gradient(to bottom, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%); 
+    background: #FFF; 
     padding: 30px;
     margin-top: 20px;
     border-radius: 5px;
@@ -52,21 +71,27 @@ img.ram {
     border: 1px solid #000;
     box-shadow: 3px 3px 10px #222;
 }
-p {
-
+table{
+    width:100%;
+    background: #EEE;
+    text-align: center;
+    vertical-align: middle;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-weight: bold;
+    cursor: pointer;
 }
-.vanster {
-    float: left;
-    margin-right: 20px;
+table, th, td {
+    border: 1px solid black;
 }
-.hoger {
-    float: right;
-    margin-left: 20px;
+table #kop{
+    background: green;
+    color: #FFF;
+    width: 50%;
 }
-hr {
-    clear: both;
-    visibility: hidden;
+table #kop:hover{
+    background: rgb(0, 80, 0);
 }
-.textHoger {
-    text-align: right;
+table #plus:hover, table #minus:hover{
+    background: #BBB;
 }

@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Läs inlägg</title>
-    <link rel="stylesheet" href="./css/flatly.epic.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
     <div class="kontainer">
         <header>
             <h1>Alla Varor</h1>
+            <div id="korgen">0kr</div>
         </header>
         <main>
             <?php
@@ -21,7 +21,7 @@
 
 $allaRader = file("beskrivnig.txt");
 foreach ($allaRader as $rad) {
-
+    
     /* plocka isär raden i dess beståndsdelar */
     $delar = explode('¤', $rad);
     $namn = $delar[0];
@@ -32,16 +32,26 @@ foreach ($allaRader as $rad) {
     echo "<div class=\"vara\">
     \n<img src=\"./varor/$bild\" alt=\"$namn\">
     \n<p>$namn</p>
-    \n<p>$pris kr</p>
-    \n<hr>
-\n</div>";
+    \n<p>Styckpris: <span id=\"stpris\">$pris</span> kr</p>
+    \n<p>Summa: <span id=\"summa\">$pris</span> kr</p>
+
+    \n<table>
+    \n<tr>
+    \n<td id=\"antal\" rowspan=\"2\">1</td>
+    \n<td id=\"plus\">+</td>
+    \n<td rowspan=\"2\" id=\"kop\">KÖP</td>
+    \n</tr>
+    \n<tr>
+    \n<td id=\"minus\">-</td>
+    \n</tr>
+    \n</table>
+    \n</div>";
 }
 ?>
         </main>
         <footer>Lukas Kirby 2018</footer>
     </div>
-
-
+    <script src="skript.js"></script>
 </body>
 
 </html>
