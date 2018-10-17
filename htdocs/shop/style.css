@@ -43,6 +43,13 @@ label{
     width: 150px;
     display: inline;
 }
+#antalVaror{
+    background: green;
+    border-radius: 30px;
+    margin-right: 100px;
+    padding: 5px;
+    color: #FFF;
+}
 #korgen{
     width: 200px;
     border: 1px solid #CCC;
@@ -50,6 +57,10 @@ label{
     padding: 5px;
     border-radius: 5px;
     background: #FFF;
+}
+#summa{
+    font-weight: bold;
+    color: red;
 }
 main {
     display: grid;

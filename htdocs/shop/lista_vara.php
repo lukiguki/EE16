@@ -12,7 +12,7 @@
     <div class="kontainer">
         <header>
             <h1>Alla Varor</h1>
-            <div id="korgen">0kr</div>
+            <div id="korgen"><span id="kostnad">0<span>kr</div>
         </header>
         <main>
             <?php
