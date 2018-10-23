@@ -1,57 +1,73 @@
+<?php
+/*
+* Läsa in alla varor och skapa en lista 
+* på alla varor.
+*
+* PHP version 7
+* @category   Webbshop
+* @author     Karim Ryde <karye.webb@gmail.com>
+* @license    PHP CC
+*/
+?>
 <!DOCTYPE html>
 <html lang="sv">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Läs inlägg</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Alla varor</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <div class="kontainer">
         <header>
-            <h1>Alla Varor</h1>
-            <div id="korgen"><span id="kostnad">0<span>kr</div>
+            <h1>Alla varor</h1>
+            <form id="korg" method="post" action="kassa.php">
+                <input id="antalVaror" type="text" value="0" name="antalVaror">
+                <input id="total" type="text" value="0 kr" name="total">
+                <input id="korgen" type="hidden" name="korgen">
+                <button id="kassan">Kassan</button>
+            </form>
         </header>
         <main>
             <?php
-
-/* öppna texfil och läsa innehållet och skriv ut det */
-
+/* Öppna textfilen och läsa in hela innehållet. */
 $allaRader = file("beskrivnig.txt");
+/* Loopa igenom rad-för-rad */
 foreach ($allaRader as $rad) {
     
-    /* plocka isär raden i dess beståndsdelar */
+    /* Plocka isär raden i dess beståndsdelar */
     $delar = explode('¤', $rad);
-    $namn = $delar[0];
+    
+    $beskrivning = $delar[0];
     $pris = $delar[1];
     $bild = $delar[2];
     
-    /* Skriv ut info och HTML */
-    echo "<div class=\"vara\">
-    \n<img src=\"./varor/$bild\" alt=\"$namn\">
-    \n<p>$namn</p>
-    \n<p>Styckpris: <span id=\"stpris\">$pris</span> kr</p>
-    \n<p>Summa: <span id=\"summa\">$pris</span> kr</p>
-
-    \n<table>
-    \n<tr>
-    \n<td id=\"antal\" rowspan=\"2\">1</td>
-    \n<td id=\"plus\">+</td>
-    \n<td rowspan=\"2\" id=\"kop\">KÖP</td>
-    \n</tr>
-    \n<tr>
-    \n<td id=\"minus\">-</td>
-    \n</tr>
-    \n</table>
-    \n</div>";
+    /* Skriv info och HTML */
+    echo "<div class=\"vara\">\n";
+    echo "<img src=\"./varor/$bild\" alt=\"$beskrivning\">\n";
+    echo "<p id=\"beskrivning\">$beskrivning</p>\n";
+    echo "<p>Styckpris: <span id=\"pris\">$pris</span> kr</p>\n";
+    echo "<p>Summa: <span id=\"summa\">$pris</span> kr</p>\n";
+    
+    echo "<table>\n";
+    echo "<tr>\n";
+    echo "<td id=\"antal\" rowspan=\"2\">1</td>\n";
+    echo "<td id=\"plus\">+</td>\n";
+    echo "<td id=\"kop\" rowspan=\"2\">KÖP</td>\n";
+    echo "</tr>\n";
+    echo "<tr>\n";
+    echo "<td id=\"minus\">-</td>\n";
+    echo "</tr>\n";
+    echo "</table>\n";
+    
+    echo "</div>\n";
 }
 ?>
         </main>
-        <footer>Lukas Kirby 2018</footer>
+        <footer>
+            Karim Ryde 2018
+        </footer>
     </div>
-    <script src="skript.js"></script>
+    <script src="skript2.js"></script>
 </body>
-
 </html>
