@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <div class="kontainer">
+    <div class="kontainer kassa">
         <header>
             <h1>Kassan</h1>
             </form>
@@ -41,6 +41,7 @@ if(isset($_POST["antalVaror"]) && isset($_POST["total"]) && isset($_POST["korgen
     echo "<tr>
         <th>Beskrivning</th>
         <th>Antal</th>
+        <th>Styckpris</th>
         <th>Summa</th>
         </tr>
         ";
@@ -48,10 +49,16 @@ if(isset($_POST["antalVaror"]) && isset($_POST["total"]) && isset($_POST["korgen
         echo "<tr>";
         echo "<td>$vara->beskrivning</td>";
         echo "<td>$vara->antal</td>";
+        echo "<td>$vara->pris</td>";
         echo "<td>$vara->summa</td>";
         echo "</tr>";
     }
     echo "</table>";
+    echo "<div class=\"total\">";
+    echo "<p>Antal Varor: $antalVaror</p>";
+    echo "<p>Total Summa: $total</p>";
+    echo "</div>";
+    
 }
 ?>
         </main>

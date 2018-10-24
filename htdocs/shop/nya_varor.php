@@ -8,10 +8,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Filuppladdning</title>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.0/dist/mini-default.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="kontainer nyVara">
 <?php
 /* Kolla att man har klickat på knappen 'submit' */
 if (isset($_POST['submit'])) {
@@ -83,8 +83,9 @@ if (isset($_POST['submit'])) {
     <form action="#" method="POST" enctype="multipart/form-data">
     <label>Beskrivning</label><input type="text" name="beskrivning"><br>
     <label>Pris</label><input type="text" name="pris"><br>
-    <input type="file" name="file">
+    <label>Bild på vara</label><label class="valjFil" for="laddaUpp"><i class="fas fa-file-upload"></i> Välj bild</label><input id="laddaUpp" type="file" name="filen"><br>
     <button typr="submit" name="submit">Ladda upp vara</button>
     </form>
+    </div>
 </body>
 </html>

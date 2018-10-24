@@ -12,6 +12,7 @@ function start() {
     const elementKontainer = document.querySelector('.kontainer');
     elementKontainer.addEventListener('click', klick);
 
+
     /* Vad händer när man klickat på sidan? */
     function klick(e) {
         console.log('Nu har vi en klick event på ' + e.target.nodeName);
@@ -35,6 +36,10 @@ function start() {
         const elementAntalVaror = document.querySelector('#antalVaror');
         const elementTotal = document.querySelector('#total');
         const elementKorgen = document.querySelector('#korgen');
+
+        elememtAntalVaror.value = 0;
+        elementTotal.value = 0;
+        elementKorgen.value = "";
 
         /* Hämta innehållet i elementen */
         var beskrivning = elementBeskrivning.textContent;
@@ -85,9 +90,10 @@ function start() {
             elementAntalVaror.value = antalVaror;
 
             /* Spara undan varor i korgen = i den dolda input */
-            data.push({ 'beskrivning': beskrivning, 'antal': antal, 'summa': summa });
+            data.push({ 'beskrivning': beskrivning, 'antal': antal, 'summa': summa, 'pris': pris });
             console.log(JSON.stringify(data));
             elementKorgen.value = JSON.stringify(data);
+            document.getElementById("kop").disabled = false;
         }
     }
 }
