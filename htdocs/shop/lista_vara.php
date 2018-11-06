@@ -46,12 +46,14 @@ session_start();
         <main>
             <?php
 /* Öppna textfilen och läsa in hela innehållet. */
-$allaRader = file("beskrivnig.txt");
+$allaRader = file("beskrivnig.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 /* Loopa igenom rad-för-rad */
 foreach ($allaRader as $rad) {
     
     /* Plocka isär raden i dess beståndsdelar */
     $delar = explode('¤', $rad);
+
+    
     
     $beskrivning = $delar[0];
     $pris = $delar[1];
