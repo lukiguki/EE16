@@ -27,9 +27,25 @@ body {
 }
 header {
     padding: 20px 0;
+    position: sticky;
+    top: 0;
+    background-color: #DDD;
 }
 h1 {
     font-size: 25px;
+}
+nav{
+    background: #AAA;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+nav a{
+    color: green;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+nav a:hover{
+    color: #FFF;
 }
 label {
     width: 150px;
@@ -139,6 +155,11 @@ footer {
     color: #FFF;
     background: #888;
     border-radius: 5px;
+}
+.nyVara header {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
 }
 .nyVara input[type="file"] {
     display: none;

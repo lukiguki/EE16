@@ -1,3 +1,4 @@
+
 <?php
 /*
 * Läsa in alla varor och skapa en lista 
@@ -8,6 +9,9 @@
 * @author     Karim Ryde <karye.webb@gmail.com>
 * @license    PHP CC
 */
+?>
+<?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -23,7 +27,14 @@
 <body>
     <div class="kontainer listaVara">
         <header>
-            <h1>Alla varor</h1>
+        <h1>Shopsmart</h1>
+        <nav>
+        <a href="./nya_varor.php">Ny vara</a>
+        <a href="./login.php">Logga in</a>
+        <a href="./kassa.php">Handla vara</a>
+        </nav>
+
+            <h2>Alla varor</h2>
             <form id="korg" method="post" action="kassa.php">
                 <input id="antalVaror" type="text" value="0" name="antalVaror">
                 <input id="total" type="text" value="0 kr" name="total">

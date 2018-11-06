@@ -1,3 +1,4 @@
+
 <?php
 /*
 * Läsa in alla varor och skapa en lista 
@@ -8,6 +9,9 @@
 * @author     Lukas Kirby <lukas.kirby@hotmail.com>
 * @license    PHP CC
 */
+?>
+<?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -22,8 +26,7 @@
 <body>
     <div class="kontainer kassa">
         <header>
-            <h1>Kassan</h1>
-            </form>
+        <h1>Shopsmart</h1>
         </header>
         <main>
             <?php

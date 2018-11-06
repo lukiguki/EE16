@@ -1,6 +1,13 @@
+
 <?php/* 
 *
  */
+?>
+<?php
+session_start();
+if (!isset($_SESSION['anamn'])) {
+    header('Location: login.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -12,6 +19,20 @@
 </head>
 <body>
 <div class="kontainer nyVara">
+<header>
+<h1>Shopsmart</h1>
+        <nav>
+        <a href="./nya_varor.php">Ny vara</a>
+        <?php
+        if (!isset($_SESSION['anamn'])){
+            echo "<a href=\"./login.php\">Logga in</a>";
+        } else{
+            echo "<a href=\"./logout.php\">Logga ut</a>";
+        }
+        ?>
+        <a href="./kassa.php">Handla vara</a>
+        </nav>
+</header>
 <?php
 /* Kolla att man har klickat på knappen 'submit' */
 if (isset($_POST['submit'])) {
