@@ -37,11 +37,12 @@ if (!isset($_SESSION['anamn'])) {
 /* Kolla att man har klickat på knappen 'submit' */
 if (isset($_POST['submit'])) {
     $filen =  $_FILES['file'];
-    $beskrivning =  $_POST['beskrivning'];
-    $pris =  $_POST['pris'];
+    $beskrivning = filter_input(INPUT_POST, 'beskrivning', FILTER_SANITIZE_STRING);
+    $pris =  filter_input(INPUT_POST, 'pris', FILTER_SANITIZE_STRING);
     /* Ladda upp bilden */
 
-    /* print_r($filen); */
+    if($filen && $beskrivning && $pris){
+/* print_r($filen); */
     /* Plocka ut filnamnet */
     $fileName = $filen['name'];
     /* echo "<p>Filens namn är $fileName</p>"; */
@@ -98,6 +99,11 @@ if (isset($_POST['submit'])) {
     $handtag = fopen('beskrivnig.txt', 'a');
     fwrite($handtag, $beskrivning . "¤" . $pris . "¤" . $fileNewName . PHP_EOL);
     fclose($handtag);
+    }else{
+        echo "<p>Var god fyll i alla fält</p>";
+    }
+
+    
     
 }
 ?>

@@ -30,10 +30,11 @@ session_start();
         </header>
         <main>
             <?php
-if(isset($_POST["antalVaror"]) && isset($_POST["total"]) && isset($_POST["korgen"])){
-    $antalVaror = $_POST["antalVaror"];
-    $total = $_POST["total"];
-    $korgen = $_POST["korgen"];
+
+    $antalVaror = filter_input(INPUT_POST, "antalVaror", FILTER_SANITIZE_NUMBER_INT);
+    $total = filter_input(INPUT_POST, "antalVaror", FILTER_SANITIZE_NUMBER_INT);
+    $korgen = filter_input(INPUT_POST, "antalVaror", FILTER_SANITIZE_);
+    if($antalVaror && $total && $korgen){
 
     echo "<p>Antal varor: $antalVaror</p>";
     echo "<p>Total: $total</p>";

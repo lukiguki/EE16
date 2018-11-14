@@ -27,8 +27,8 @@ session_start();
             </nav>
         </header>
         <?php
-    $anamn = $_POST["anamn"];
-    $losenord = $_POST["losenord"];
+    $anamn = filter_input(INPUT_POST, 'anamn', FILTER_SANITIZE_STRING);
+    $losenord = filter_input(INPUT_POST, 'losenord', FILTER_SANITIZE_STRING);
 
     /* kontrollera användarnamn och lösenord */
     
