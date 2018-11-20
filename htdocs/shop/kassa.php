@@ -32,8 +32,8 @@ session_start();
             <?php
 
     $antalVaror = filter_input(INPUT_POST, "antalVaror", FILTER_SANITIZE_NUMBER_INT);
-    $total = filter_input(INPUT_POST, "antalVaror", FILTER_SANITIZE_NUMBER_INT);
-    $korgen = filter_input(INPUT_POST, "antalVaror", FILTER_SANITIZE_);
+    $total = filter_input(INPUT_POST, "total", FILTER_SANITIZE_NUMBER_INT);
+    $korgen = json_decode($_POST['korgen']);
     if($antalVaror && $total && $korgen){
 
     echo "<p>Antal varor: $antalVaror</p>";
@@ -50,11 +50,16 @@ session_start();
         </tr>
         ";
     foreach ($listaVaror as $vara) {
+        $beskrivning = filter_var($vara->beskrivning, FILTER_SANITIZE_STRING);
+        $antal = filter_var($vara->antal, FILTER_SANITIZE_NUMBER_INT);
+        $pris = filter_var($vara->pris, FILTER_SANITIZE_NUMBER_INT);
+        $summa = filter_var($vara->summa, FILTER_SANITIZE_NUMBER_INT);
+
         echo "<tr>";
-        echo "<td>$vara->beskrivning</td>";
-        echo "<td>$vara->antal</td>";
-        echo "<td>$vara->pris</td>";
-        echo "<td>$vara->summa</td>";
+        echo "<td>$beskrivning</td>";
+        echo "<td>$antal</td>";
+        echo "<td>$pris</td>";
+        echo "<td>$summa</td>";
         echo "</tr>";
     }
     echo "</table>";
