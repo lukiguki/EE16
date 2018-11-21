@@ -111,7 +111,7 @@ if (isset($_POST['submit'])) {
     <label>Beskrivning</label><input type="text" name="beskrivning"><br>
     <label>Pris</label><input type="text" name="pris"><br>
     <label>Bild på vara</label><label class="valjFil" for="laddaUpp"><i class="fas fa-file-upload"></i> Välj bild</label><input id="laddaUpp" type="file" name="filen"><br>
-    <button typr="submit" name="submit">Ladda upp vara</button>
+    <button type="submit" name="submit">Ladda upp vara</button>
     </form>
     </div>
 </body>
