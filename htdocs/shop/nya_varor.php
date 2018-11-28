@@ -1,9 +1,9 @@
 
-<?php/* 
+<?php
+/* 
 *
  */
-?>
-<?php
+
 session_start();
 if (!isset($_SESSION['anamn'])) {
     header('Location: login.php');
@@ -36,7 +36,7 @@ if (!isset($_SESSION['anamn'])) {
 <?php
 /* Kolla att man har klickat på knappen 'submit' */
 if (isset($_POST['submit'])) {
-    $filen =  $_FILES['file'];
+    $filen =  $_FILES['filen'];
     $beskrivning = filter_input(INPUT_POST, 'beskrivning', FILTER_SANITIZE_STRING);
     $pris =  filter_input(INPUT_POST, 'pris', FILTER_SANITIZE_STRING);
     /* Ladda upp bilden */

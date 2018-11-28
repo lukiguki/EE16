@@ -24,7 +24,7 @@
     echo substr($hello, 4, 2);
     echo substr($hello, 8, 3);
 
-    $epost = "h@gool.co"
+    $epost = "h@gool.co";
     if (strstr($epost, "@")) {
         
     }
