@@ -1,0 +1,23 @@
+body{
+    background: #fff;
+}
+
+.kontainer{
+    background: #bb00bb;
+    padding: 20px;
+    width: 500px;
+    margin: 20px auto;
+    box-shadow: 2px 2px 5px;
+    border-radius: 5px;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 100px 200px;
+    grid-gap: 10px;
+}
+
+input, select{
+    padding: 10px;
+    margin: 5px;
+}
