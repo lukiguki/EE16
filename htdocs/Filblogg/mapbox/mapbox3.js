@@ -23,7 +23,7 @@ function start() {
         console.log(e.lngLat);
         /* eBox.innerHTML += "<tr><td>Long:" + e.lngLat.lng + "</td><td>" + e.lngLat.lat + "</td><td>Text</td></tr>"; */
 
-        eBox.innerHTML += e.lngLat + "," + e.lngLat.lat + ",";
+        eBox.innerHTML += e.lngLat + "," + e.lngLat.lat + "," + "\n";
     }
 
 }
