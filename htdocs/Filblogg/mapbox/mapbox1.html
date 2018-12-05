@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>Display a map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="mapbox.css">
+</head>
+
+<body>
+
+    <div id='map'></div>
+    <script>
+        mapboxgl.accessToken =
+            'pk.eyJ1IjoibHVraWd1a2kiLCJhIjoiY2pwYXkzOW96MDlsbDN4cGh3dHhoOXF5diJ9.xxVScqw15Zz0pXE0KqNT3g';
+        let map = new mapboxgl.Map({
+            container: 'map', // container id
+            style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
+            center: [18.07, 59.33], // starting position [lng, lat]
+            zoom: 5 // starting zoom
+        });
+
+        map.addEventListener("click", addMarker);
+        function addMarker(e) {
+            let marker1 = new mapboxgl.Marker({draggable: true})
+        .setLngLat([18.1, 59.33])
+        .addTo(map);
+        }
+    </script>
+
+</body>
+
+</html>
