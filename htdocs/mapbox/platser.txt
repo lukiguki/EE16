@@ -1,0 +1,4 @@
+13.59856, 60.71314:beskrivningar[0]
+13.59856, 60.71314:beskrivningar[1]
+13.59856, 60.71314:beskrivningar[2]
+13.59856, 60.71314:beskrivningar[3]
