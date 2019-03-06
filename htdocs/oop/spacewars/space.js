@@ -16,13 +16,15 @@ function start() {
     var imgSpelare = new Image();
     imgSpelare.src = "./sprites/raket.png";
 
-    raket.x = 250;
-    raket.y = 580;
+    raket.x = 300;
+    raket.y = 300;
     /* starta ritande */
     function ritaRacket(x, y) {
+        raket.x = raket.h * Math.cos(raket.v);
+        raket.y = raket.h * Math.cos(raket.v);
         ctx.beginPath();
+        ctx.rotate(raket.v);
         ctx.drawImage(imgSpelare, x, y, 30, 30);
-
         ctx.closePath();
     }
     /* karaktär settings */
@@ -39,16 +41,13 @@ function start() {
 
     function uppdateraRacket() {
         if (keys["ArrowLeft"]) {
-            raket.x -= 10;
+            raket.v -= 10;
         }
         if (keys["ArrowRight"]) {
-            raket.x += 10;
+            raket.v += 10;
         }
         if (keys["ArrowUp"]) {
-            raket.y -= 10;
-        }
-        if (keys["ArrowDown"]) {
-            raket.y += 10;
+            raket.h -= 10;
         }
         if (raket.x < 0) {
             raket.x = 800;
@@ -66,8 +65,10 @@ function start() {
     }
 
     function reset() {
-        raket.x = 250;
-        raket.y = 580;
+        raket.x = 300;
+        raket.y = 300;
+        raket.v = 0;
+        raket.h = 0;
     }
     /* Starta spel */
     function gameLoop() {
