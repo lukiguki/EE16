@@ -1,4 +1,4 @@
-window.onload = star;
+window.onload = start();
 
 function start() {
     const eInput = document.querySelector("input");

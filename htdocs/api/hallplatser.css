@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.box{
+    background: rgba(0, 0, 0, 0.6);
+    color: #FFF;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    width: 350px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+}
+
+textarea, button{
+    border: none;
+    padding: 5px;
+    border-radius:  3px;
+    resize: none;
+}
+
+.coordinates, .beskrivning{
+    width: 100%;
+    height: 400px;
+}
+.platser{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+input, button{
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    width: 140px;
+}
+button:hover{
+    cursor: pointer;
+}
+.marker{
+    background-image: url("home.png");
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}

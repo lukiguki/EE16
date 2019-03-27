@@ -7,18 +7,152 @@ function start() {
     var map = [];
     var keyExist;
     var haveKey = "";
-    var yote = {
-        x: 0,
-        y: 0,
-        health: 10
-    };
-    var hatch = {
-        x: 0,
-        y: 0
-    };
+
+    var spelData = [
+        {
+            spelareX: 1,
+            spelareY: 1,
+            yoteX: 1,
+            yoteY: 13,
+            yoteHealth: 10,
+            keyX: 9,
+            keyY: 5,
+            hatchX: 13,
+            hatchY: 11,
+            map: [
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+                [1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1],
+                [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1],
+                [1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1],
+                [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1],
+                [1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1],
+                [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1],
+                [1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1],
+                [1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1],
+                [1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1],
+                [1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1],
+                [1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1],
+                [1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1],
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+            ]
+        },
+        {
+            spelareX: 13,
+            spelareY: 11,
+            yoteX: 4,
+            yoteY: 13,
+            yoteHealth: 15,
+            keyX: 10,
+            keyY: 11,
+            hatchX: 7,
+            hatchY: 7,
+            map: [
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1],
+                [1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+                [1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1],
+                [1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1],
+                [1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1],
+                [1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1],
+                [1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1],
+                [1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+                [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+                [1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1],
+                [1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1],
+                [1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1],
+                [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+            ]
+        },
+        {
+            spelareX: 7,
+            spelareY: 7,
+            yoteX: 1,
+            yoteY: 13,
+            yoteHealth: 15,
+            keyX: 11,
+            keyY: 3,
+            hatchX: 3,
+            hatchY: 7,
+            map: [
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+                [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+                [1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1],
+                [1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1],
+                [1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1],
+                [1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+                [1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1],
+                [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+                [1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1],
+                [1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1],
+                [1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1],
+                [1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1],
+                [1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1],
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+            ]
+        },
+        {
+            spelareX: 3,
+            spelareY: 7,
+            yoteX: 9,
+            yoteY: 1,
+            yoteHealth: 15,
+            keyX: 11,
+            keyY: 3,
+            hatchX: 13,
+            hatchY: 1,
+            map: [
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+                [1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1],
+                [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1],
+                [1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1],
+                [1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1],
+                [1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1],
+                [1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1],
+                [1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1],
+                [1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1],
+                [1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1],
+                [1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1],
+                [1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1],
+                [1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1],
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+            ]
+        },
+        {
+            spelareX: 13,
+            spelareY: 1,
+            yoteX: 9,
+            yoteY: 1,
+            yoteHealth: 15,
+            keyX: 13,
+            keyY: 8,
+            hatchX: 1,
+            hatchY: 5,
+            map: [
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+                [1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1],
+                [1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+                [1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1],
+                [1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1],
+                [1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+                [1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                [1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1],
+                [1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1],
+                [1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1],
+                [1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1],
+                [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1],
+                [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+            ]
+        }
+    ];
 
     /* hela kartan, level1 */
-    
+
 
     function ritaPath(x, y) {
         ctx.beginPath();
@@ -62,8 +196,8 @@ function start() {
         reset() {
             this.fight = false;
             this.time = 0;
-            this.x = 1;
-            this.y = 1;
+            this.x = spelData[hatch.level].spelareX;
+            this.y = spelData[hatch.level].spelareY;
         }
     }
     var spelare = new Spelare();
@@ -97,42 +231,53 @@ function start() {
             spelare.y = gamlaY;
         }
     }
-
-    function fightOver() {
-
-    }
     /* monster Yote*/
     var imgYote = new Image();
     imgYote.src = "./sprites/monsterYote.png";
 
-    function ritaYote(x, y) {
-        if ((yote.x >= spelare.x - 1) && (yote.x <= spelare.x + 1) && (yote.y >= spelare.y - 1) && (yote.y <= spelare.y + 1)) {
-            ctx.beginPath();
-            ctx.drawImage(imgYote, yote.x * 40 + 5, yote.y * 40 + 5, 30, 30);
-            ctx.closePath();
+    class Yote {
+        constructor() {
+            this.imgYote = new Image();
+            this.imgYote.src = "./sprites/monsterYote.png";
+            this.x = 0;
+            this.y = 0;
+            this.health = 0;
         }
-    }
-
-    function actionYote() {
-        if (yote.health >= 1) {
-            ritaYote();
-            if ((yote.x >= spelare.x - 1) && (yote.x <= spelare.x + 1) && (yote.y >= spelare.y - 1) && (yote.y <= spelare.y + 1)) {
-                if (spelare.time == 0) {
-                    spelare.time = Date.now();
-                } else {
-                    spelare.fight = true;
-                    var fightTime = Date.now();
-                    if (fightTime - spelare.time >= 3000) {
-                        death();
+        ritaYote(x, y) {
+            if ((this.x >= spelare.x - 1) && (this.x <= spelare.x + 1) && (this.y >= spelare.y - 1) && (this.y <= spelare.y + 1)) {
+                ctx.beginPath();
+                ctx.drawImage(this.imgYote, this.x * 40 + 5, this.y * 40 + 5, 30, 30);
+                ctx.closePath();
+            }
+        }
+        reset() {
+            this.x = spelData[hatch.level].yoteX;
+            this.y = spelData[hatch.level].yoteY;
+            this.health = spelData[hatch.level].yoteHealth;
+        }
+        actionYote() {
+            if (this.health >= 1) {
+                this.ritaYote();
+                if ((this.x >= spelare.x - 1) && (this.x <= spelare.x + 1) && (this.y >= spelare.y - 1) && (this.y <= spelare.y + 1)) {
+                    if (spelare.time == 0) {
+                        spelare.time = Date.now();
+                    } else {
+                        spamSpace();
+                        spelare.fight = true;
+                        var fightTime = Date.now();
+                        if (fightTime - spelare.time >= 3000) {
+                            death();
+                        }
                     }
                 }
             }
-        }
-        if (yote.health <= 0) {
-            spelare.time = 0;
-            spelare.fight = false;
+            if (this.health <= 0) {
+                spelare.time = 0;
+                spelare.fight = false;
+            }
         }
     }
+    var yote = new Yote();
     /* nyckeln */
     class Keys {
         constructor() {
@@ -143,8 +288,9 @@ function start() {
             this.live = true;
         }
         reset() {
-            this.x = 9;
-            this.y = 5;
+            this.x = spelData[hatch.level].keyX;
+            this.y = spelData[hatch.level].keyY;
+            this.live = true;
         }
         ritaKey(x, y) {
             ctx.beginPath();
@@ -169,25 +315,43 @@ function start() {
     }
     var key1 = new Keys();
     /* dörren */
-    var imgHatch = new Image();
-    imgHatch.src = "./sprites/hatch.png";
-
-    function ritaHatch(x, y) {
-        if ((hatch.x >= spelare.x - 1) && (hatch.x <= spelare.x + 1) && (hatch.y >= spelare.y - 1) && (hatch.y <= spelare.y + 1)) {
-            ctx.beginPath();
-            ctx.drawImage(imgHatch, hatch.x * 40 + 5, hatch.y * 40, 30, 40);
-            ctx.closePath();
+    class Hatch {
+        constructor() {
+            this.imgHatch = new Image();
+            this.imgHatch.src = "./sprites/hatch.png";
+            this.x = 0;
+            this.y = 0;
+            this.level = 0;
+        }
+        ritaHatch(x, y) {
+            if ((this.x >= spelare.x - 1) && (this.x <= spelare.x + 1) && (this.y >= spelare.y - 1) && (this.y <= spelare.y + 1)) {
+                ctx.beginPath();
+                ctx.drawImage(this.imgHatch, this.x * 40 + 5, this.y * 40, 30, 40);
+                ctx.closePath();
+            }
+        }
+        reset() {
+            this.x = spelData[this.level].hatchX;
+            this.y = spelData[this.level].hatchY;
         }
     }
+    var hatch = new Hatch();
 
     function havingKey(haveKey) {
         ctx.font = "16px Arial";
         ctx.fillStyle = "#FFF";
         ctx.fillText("Key: " + haveKey, 300, 20);
     }
+    function spamSpace() {
+        ctx.font = "30px Arial";
+        ctx.fillStyle = "#FFF";
+        ctx.fillText("Rapidly Press Spacebar", 100, 300);
+    }
+
     function keyHatch() {
-        if ((spelare.x == hatch.x) && (spelare.y == hatch.y) && ) {
-            
+        if ((spelare.x == hatch.x) && (spelare.y == hatch.y) && (keyExist)) {
+            hatch.level++;
+            reset();
         }
     }
     /* olika funktioner */
@@ -196,30 +360,11 @@ function start() {
     }
     /* reset funktion */
     function reset() {
-        map = [
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1],
-            [1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1],
-            [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1],
-            [1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1],
-            [1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1],
-            [1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1],
-            [1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1],
-            [1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1],
-            [1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1],
-            [1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-        ];
-        yote.x = 1;
-        yote.y = 13;
-        yote.health = 10;
+        map = spelData[hatch.level].map;
         spelare.reset();
-        hatch.x = 13;
-        hatch.y = 11;
+        yote.reset();
         key1.reset();
+        hatch.reset();
         keyExist = false;
         haveKey = "You don't have the key";
     }
@@ -231,11 +376,12 @@ function start() {
         ctx.clearRect(0, 0, 800, 600);
         ritaKarta();
         spelare.ritaSpelare();
-        ritaHatch();
-        actionYote();
+        hatch.ritaHatch();
+        yote.actionYote();
         havingKey(haveKey);
         key1.keySpawn();
         key1.getPoints();
+        keyHatch();
 
         requestAnimationFrame(gameLoop);
     }
