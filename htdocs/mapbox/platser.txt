@@ -2,3 +2,6 @@
 13.59856, 60.71314:beskrivningar[1]
 13.59856, 60.71314:beskrivningar[2]
 13.59856, 60.71314:beskrivningar[3]
+16.42205, 58.89007:beskrivningar[0]
+16.42205, 58.89007:beskrivningar[1]
+16.42205, 58.89007:beskrivningar[2]
