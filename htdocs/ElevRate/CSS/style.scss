@@ -5,7 +5,6 @@
 body {
     background: rgba(173, 191, 203, 1);
     .container {
-        text-align: center;
         margin: auto;
 
         header {
@@ -17,6 +16,7 @@ body {
             }
             /* navigationsbaren börjar */
             nav {
+                text-align: center;
                 margin: auto;
                 width: auto;
                 padding: 30px;

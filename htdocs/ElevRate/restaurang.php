@@ -24,11 +24,11 @@ if (!isset($_SESSION['loggedin'])){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ElevRate</title>
-    <link rel="stylesheet" href="css/style.css">
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="./CSS/mapbox.css">
+    <link rel="stylesheet" href="./css/mapbox.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -47,7 +47,12 @@ if (!isset($_SESSION['loggedin'])){
         </header>
         <main>
             <section>
-            <div id='map'></div>
+                <div id='map'></div>
+                <div class="box">
+                    <h1>Mina platser</h1>
+                    <form class="platser"></form>
+                    <button id="muffin">Spara</button>
+                </div>
                 <form action="#" method="post">
                     <label for="renamn">Restaurang Namn:</label><br>
                     <input name="renamn" type="text" class="form" required><br>
@@ -88,7 +93,7 @@ if (isset($_POST["renamn"]) && isset($_POST["lat"]) && isset($_POST["lon"])){
             </section>
         </main>
     </div>
-    <script src="./js/script.js"></script>
     <script src="./js/mapbox4.js"></script>
 </body>
+
 </html>

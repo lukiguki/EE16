@@ -8,7 +8,7 @@ function start() {
         'pk.eyJ1IjoibHVraWd1a2kiLCJhIjoiY2pwYXkzOW96MDlsbDN4cGh3dHhoOXF5diJ9.xxVScqw15Zz0pXE0KqNT3g';
     let map = new mapboxgl.Map({
         container: 'map', // container id
-        style: 'mapbox://styles/lukiguki/cjpb304hc09uk2st6kvss5dtl', // stylesheet location
+        style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
         center: [18.07, 59.33], // starting position [lng, lat]
         zoom: 5 // starting zoom
     });

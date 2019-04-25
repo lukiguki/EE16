@@ -24,7 +24,6 @@ body {
 }
 
 body .container {
-  text-align: center;
   margin: auto;
 }
 
@@ -40,6 +39,7 @@ body .container header h1 {
 }
 
 body .container header nav {
+  text-align: center;
   margin: auto;
   width: auto;
   padding: 30px;
